@@ -1,0 +1,144 @@
+---
+title: "Cultural_data_science"
+author: "Ida Elmose Brøcker"
+date: "2023-09-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Introduction til R i cultural data science 
+
+
+## R Markdown
+
+```{r}
+#set working directory 
+#go to session, press "Set working directory", "choose directory", and it will print the path in the console
+
+setwd("/Users/idaelmosebroecker/Desktop/cult_data_science")
+
+
+```
+
+
+```{r}
+
+#install stuff
+#install.packages("psych")
+
+#load it
+#library(psych)
+
+#remove
+#remove.packages("psych")
+
+
+
+# with pacman
+pacman::p_load(tidyverse, ggplot2)
+
+
+
+```
+
+```{r}
+y <- 2
+x <- "what"
+
+str(y) #whats in it 
+str(x)
+
+mean(y)
+
+x <- c(1, 2, 3, 4, 5) #concatenate/combine these number - override x
+
+str(x)
+class(x)
+  
+x <- seq(1:15)
+str(x)
+
+x*2
+
+x
+t(x) #transpose -rotate the data 
+view(x)
+
+y <- 6:10
+z <- c(x, y)
+z <- rbind(x, y)
+z <- cbind(x, y)
+
+z <- data.frame(x, y)
+z$y
+
+view(t(z))
+
+z[1,1] #indexing 
+
+
+plot(z, pch = 16, col = "red") #choose what kind of dots 
+plot(z, type = "l") #make a line
+
+corxy <- cor.test(z$x, z$y)
+corxy
+
+obs <- c(2, 5, 5, 6, 10, 10, 12, 18, 29, 29)
+sum(obs)
+
+sum(obs)/length(obs)
+mean(obs)
+sd(obs)
+
+obs-mean(obs) #deviances
+(obs-mean(obs))^2
+hist(obs)
+hist(obs/length(obs))
+
+
+
+#draw from distribution - simulate data
+set.seed(666) #now the values will be the same every time you run it 
+
+n <- 100
+normal1 <- rnorm(n, 5, 1)
+normal1
+hist(normal1)
+
+binom1 <- rbinom(n, 1, 0.7)
+table(binom1) #make a table of the data
+table(binom1)/n
+
+
+```
+
+
+```{r}
+
+data("mtcars")
+str(mtcars)
+
+```
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
